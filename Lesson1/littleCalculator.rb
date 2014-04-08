@@ -1,4 +1,8 @@
-require 'pry'
+DEBUG = false
+
+if DEBUG == true
+	require 'pry'
+end
 
 # class Array
 # 	def to_s
@@ -15,15 +19,15 @@ end
 say 'Enter a first number:'
 num1 = gets.chomp
 
-puts "The first number is #{num1}"
-
 say 'Enter a second number:'
 num2 = gets.chomp
 
 say "1) add 2) subtract 3) multiply 4) divide"
 operator = gets.chomp
 
-binding.pry
+if DEBUG == true
+	binding.pry
+end
 
 if operator == "1"
 	result = num1.to_f + num2.to_f
