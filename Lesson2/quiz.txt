@@ -1,0 +1,43 @@
+# 1
+a = 1 # => "Local variable and is a fixnum"
+@a = 2 # => "If this is inside a class, it's a fixnum instance variable"
+user = User.new # => An instance of the User class
+user.name # => A method of the User class (or user instance)
+user.name = # => Ruby's syntactical sugar for a setter method for the instance variable 'name'
+
+# Problem 2
+class Aclass
+  include Module
+end 
+
+# Problem 3
+# Class variables apply to the class (and all instances), can be called from the Class 
+#  without instantiating an object.  Instance variables are available throughout the 
+#  object's instance, but not accessible directly from another object of the same class.
+
+# Problem 4
+#  attr_accessor is a convenience function that creates getters and setters for instance variables
+
+# Problem 5
+Dog.some_method  # This should be a class method for the Dog class
+
+# Problem 6
+# Ruby only allows subclassing from a single class. The way it handles polymorphism is to allow
+#  modules to be included (mixed in) with the new class. Multiple modules can be included in 
+#  a class.
+
+# Problem 7
+class User
+  initialize(name)
+    @name = name
+  end
+end
+
+# Problem 8
+#  Yes
+
+# Problem 9
+#  1. Read the error and look for a line number
+#  2. Look for something obvious on or around that location
+#  3. Set a breakpoint or binding.pry to inspect the variables
+#  4. Google the error
